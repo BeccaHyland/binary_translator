@@ -43,4 +43,10 @@ class BinaryTranslator
     binary_array.join
   end
 
+  def translate_to_text(key)
+    #how to break string into array elements after every 6 characters
+    @alpha_to_binary.invert
+    #iterate over items in the array
+  end
+
 end
