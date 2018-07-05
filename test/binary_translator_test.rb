@@ -33,10 +33,22 @@ class BinaryTranslatorTest < Minitest::Test
   def test_it_can_translate_an_uppercase_word_to_binary
     bt = BinaryTranslator.new
     assert_equal "010100010101010010001001001110000111", bt.translate("TURING")
+    binding.pry
   end
 
-  def test_it_can_ignore_spaces
+  def test_spaces_equal_to_000000
     bt = BinaryTranslator.new
     assert_equal "000000", bt.translate(" ")
   end
+
+  def test_it_ignores_non_letters
+    bt = BinaryTranslator.new
+    assert_equal "", bt.translate("!@{$#%^&*()}")
+  end
+
+  def test_it_can_translate_while_also_ignoring
+    bt = BinaryTranslator.new
+    assert_equal "001000000101001100001100001111000000010111001111010010001100000100", bt.translate("Hello World!")
+  end
+
 end

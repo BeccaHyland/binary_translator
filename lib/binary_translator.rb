@@ -43,7 +43,4 @@ class BinaryTranslator
     binary_array.join
   end
 
-  #ignore characters
-
-
 end
