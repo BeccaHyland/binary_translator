@@ -1,5 +1,5 @@
 class BinaryTranslator
-  attr_accessor :alpha_to_binary
+  attr_accessor :alpha_to_binary, :key
 
   def initialize
     @alpha_to_binary = {
@@ -28,7 +28,8 @@ class BinaryTranslator
       "w" => "010111",
       "x" => "011000",
       "y" => "011001",
-      "z" => "011010"
+      "z" => "011010",
+      " " => "000000"
     }
   end
 
@@ -41,6 +42,8 @@ class BinaryTranslator
     end
     binary_array.join
   end
+
+  #ignore characters
 
 
 end

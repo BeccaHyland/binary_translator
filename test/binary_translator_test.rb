@@ -5,9 +5,6 @@ require 'pry'
 
 class BinaryTranslatorTest < Minitest::Test
 
-# def test_it_requires_lib_file
-# end
-
   def test_it_exists
     bt = BinaryTranslator.new
     assert_instance_of BinaryTranslator, bt
@@ -33,4 +30,13 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "000001", bt.translate("A")
   end
 
+  def test_it_can_translate_an_uppercase_word_to_binary
+    bt = BinaryTranslator.new
+    assert_equal "010100010101010010001001001110000111", bt.translate("TURING")
+  end
+
+  def test_it_can_ignore_spaces
+    bt = BinaryTranslator.new
+    assert_equal "000000", bt.translate(" ")
+  end
 end
